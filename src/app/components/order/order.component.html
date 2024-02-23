@@ -1,0 +1,21 @@
+<ion-item lines="full">
+  <ion-label>
+    <h4>{{restaurant?.name}} <ion-icon class="margin-top" name="chevron-forward-outline"></ion-icon> </h4>
+    <ion-text color="dark">
+      <h3 class="pStyle">Itens: {{getOrder(restaurant?.order)}}</h3>
+      <p>R$ {{restaurant?.price}} </p>
+    </ion-text>
+    <ion-note slot="end" color="dark">
+      Entregue
+      <ion-icon name="checkmark-circle-outline" color="success"></ion-icon>
+    </ion-note>
+    <ion-row>
+      <ion-col col="6">
+        <ion-button fill="outline" expand="block" class="repeat-button">Pedir novamente</ion-button>
+      </ion-col>
+      <ion-col col="6">
+        <ion-button fill="outline" expand="block" color="dark" class="complaint-button">Abrir Reclamação</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-label>
+</ion-item>

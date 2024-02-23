@@ -1,0 +1,64 @@
+.dashedBorderBottom{
+    border-bottom: 1px dashed var(--ion-color-medium);
+    padding-bottom: 1.5vh;
+    margin-bottom: 1vh;
+}
+h1{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.veg{
+    align-items: center;
+}
+
+ion-toggle{
+    margin-left: 5vw;
+}
+
+ion-item{
+    ion-thumbnail{
+        height: 10vh;
+        width: 20vh;
+        img{
+            border-radius: 5px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    ion-row{
+        border: 1px solid var(--ion-color-medium);
+        border-radius: 2px;
+        padding: 0.3rem;
+    }
+}
+
+quantity{
+    width: 2rem;
+}
+
+ion-list-header{
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+ion-text{
+    font-size: 0.8rem;
+    p{
+        margin-top: 0.2rem;
+    }
+}
+
+ion-footer{
+    h4{
+        margin-left: 3%;
+    }
+    p{
+        margin-left: 3%;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+    ion-button{
+        color:white;
+    }
+}

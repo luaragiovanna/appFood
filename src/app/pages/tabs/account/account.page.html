@@ -1,0 +1,39 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title>Minha Conta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="power-outline" style="color: white;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading-order *ngIf="isLoading"></app-loading-order>
+  <ion-list *ngIf="!isLoading">
+    <ion-item lines="full">
+      <ion-button slot="end" fill="clear">Editar</ion-button>
+      <ion-label>
+        <h4>Jose Paulo</h4>
+        <p>429989999 | abcd&#;gmail.com</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" detail="true">
+      <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+      <h5>Gerenciar Endereços</h5>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header *ngIf="!isLoading">
+      <ion-label color="primary">Últimos pedidos</ion-label>
+    </ion-list-header>
+    <ion-item-group *ngIf="!isLoading">
+      <!--mostrar so osrestaurantes cm itens dentro do vetor order-->
+      <app-order *ngFor="let restaurant of filteredRestaurants()" [restaurant]="restaurant"></app-order>
+    </ion-item-group> <!--se n tem pedido-->
+    <app-empty-order *ngIf="!isLoading && restaurants?.length == 0" [model]="model">
+      <ion-icon class="custom-icon" [name]="model.icon"></ion-icon>
+    </app-empty-order>
+  </ion-list>
+</ion-content>

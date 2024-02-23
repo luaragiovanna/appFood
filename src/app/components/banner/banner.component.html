@@ -1,0 +1,11 @@
+<ion-row> <!---->
+  <div>
+    <!-- arrumar as imags centralizadas dxar cantinho do prox aparecendo -->
+    <swiper-container [modules]="swiperModules" [slidesPerView]="1.2" [centeredSlides]="true" autoplay="true" [spaceBetween]="20" [pagination]="{clickable: true, dynamicBullets: true}">
+      <swiper-slide *ngFor="let image of bannerImages">
+        <img [src]="image?.banner"/>
+      </swiper-slide>
+    
+    </swiper-container>
+      </div>
+</ion-row>

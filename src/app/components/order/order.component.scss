@@ -1,0 +1,21 @@
+
+          ion-button {
+            &.repeat-button {
+              --background: rgb(209, 13, 13); 
+              --color: white; 
+              --border-color: rgba(0, 0, 0, 0.2); 
+              font-weight: normal; 
+            }
+            &:active {
+                --background: darkred; 
+              }
+  
+            &.complaint-button {
+              --background: #333; 
+              --color: white; 
+              --border-color: rgba(0, 0, 0, 0.2); 
+              font-weight: bold; 
+            }
+          }
+
+  

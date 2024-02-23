@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="tertiary">Carrinho</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img [src]="model?.restaurant?.cover ? model.restaurant.cover : 'assets/imgs/vazio.jpg'"/>
+      </ion-thumbnail>
+      <ion-label>
+        <ion-text>
+          <h4>{{model?.restaurant?.name}}</h4>
+        </ion-text>
+        <ion-note>{{model?.restaurant?.address}}</ion-note>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngFor="let item of model?.items; let i = index">
+      <ion-text>
+        <span class="dotStyle">&#9679;</span>
+      </ion-text>
+      <ion-label class="ion-text-wrap">
+        <h5>{{item?.name}}</h5>
+      </ion-label>
+      <ion-row>
+        <ion-icon color="succes" name="remove-outline" (click)="quantityMinus(i)"></ion-icon> 
+        <ion-text class="ion-text-center quantity" color="success">{{item?.quantity}}</ion-text>
+        <ion-icon color="succes" name="add-outline" (click)="quantityPlus(i)"></ion-icon> 
+      </ion-row>
+      <ion-text slot="end" color="dark" class="price">
+        R$: {{item?.price * item?.quantity}}
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="none">
+    <ion-icon slot="start" name="list-outline"></ion-icon>
+    <ion-input type="text" placeholder="Alguma alteração? Vamos fazer o nosso melhor"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="tertiary">
+        <h5>Detalhes</h5>
+      </ion-label>
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-label>Total: </ion-label>
+      <ion-text slot="end" color="dark">
+        R$: {{model?.totalPrice}}
+      </ion-text>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Entrega: </ion-label>
+      <ion-text slot="end" color="dark">
+        R$: {{model?.deliverycharge}}
+      </ion-text>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Total a pagar: </ion-label>
+      <ion-text slot="end" color="dark">
+        R$: {{model?.grandTotal}}
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button slot="end" fill="clear" (click)="changeAddress()">Trocar</ion-button>
+      <ion-icon slot="start" name="home-outline"></ion-icon>
+      <ion-label>
+        <h5>Entragar em CASA</h5>
+        <ion-text>
+          <p>Andrade Neves, 1456</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding">
+        <ion-item lines="none" color="light" class="ion-no-padding">
+          <h6>R$: {{model?.grandTotal}}</h6>
+          <ion-text color="secondary">Ver Detalhes</ion-text>
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-button color="success">Realizar Pagamento</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

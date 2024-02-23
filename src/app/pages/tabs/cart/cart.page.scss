@@ -1,0 +1,53 @@
+ion-list{
+    margin-top: 3vh;
+}
+
+ion-img{
+    border-radius: 5px;
+}
+
+.quantity{
+    width: 2rem;
+}
+.price{
+    margin-left: 10vw;
+    width: 3.5rem;
+    
+}
+
+ion-item{
+    letter-spacing: 0.5px;
+    ion-text{
+        font-size: 0.8rem;
+    }
+    ion-row{
+        border: 1px solid var(--ion-color-medium);
+        border-radius: 2px;
+        padding: 0.3rem;
+    }
+}
+h5{
+    font-weight: bold;
+    font-size: 1 rem;
+}
+
+.dotStyle{
+    padding: 0 0.1rem;
+    font-size: 0.8rem;
+    margin-left: 0.4px;
+   
+}
+ion-input{
+    font-size: 0.7rem;
+}
+
+ion-footer{
+    ion-text, p{
+        font-size: 0.6rem;
+    }
+}
+ion-col{
+    ion-label{
+        margin-left: 5px;
+    }
+}

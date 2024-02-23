@@ -1,0 +1,31 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title mode="md"> <!--mmudança de estilo -->
+      <span>Principal</span>
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<!--- importa pra n funcionar banner banner[] = b1-->
+ <app-banner *ngIf="!isLoading" [bannerImages]="banners"></app-banner>
+<div *ngIf="isLoading">
+<ion-skeleton-text animated style="height: 25vh;"></ion-skeleton-text>
+</div>
+<app-loading-restaurant *ngIf="isLoading"></app-loading-restaurant>
+  <ion-list *ngIf="!isLoading">
+    <ion-list-header class="ion-margin-bottom">
+    <ion-label>
+    <h4>Restaurantes Próximos</h4>
+    <p>Descubra restaurantes próximos de você</p>
+    </ion-label>
+    </ion-list-header>
+    <!-- restaurantes-->
+    <ion-item-group *ngIf="restaurants?.length > 0">
+      <app-restaurant *ngFor="let restaurant of restaurants" [restaurant]="restaurant" [routerLink]="['/','tabs','restaurants', restaurant.uid]"></app-restaurant>
+    </ion-item-group>
+  
+    </ion-list>
+
+</ion-content>
